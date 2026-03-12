@@ -777,9 +777,18 @@ render_page() {
   local title="$2"
   local subtitle="$3"
   local breadcrumb="$4"
+  local rel_prefix
   local body_file
   body_file=$(mktemp)
   cat > "$body_file"
+
+  if [[ "$dir" == "." ]]; then
+    rel_prefix="./"
+  else
+    local segment_count
+    segment_count=$(awk -F'/' '{print NF}' <<< "$dir")
+    rel_prefix=$(printf '../%.0s' $(seq 1 "$segment_count"))
+  fi
 
   mkdir -p "$dir"
   cat > "$dir/index.html" <<HTML
@@ -904,6 +913,10 @@ $(cat "$body_file")
 </body>
 </html>
 HTML
+
+  # Convert root-absolute links to depth-aware relative links so static hosting
+  # works both locally and on GitHub Pages project paths.
+  perl -0pi -e 's{(href|src)="/}{$1="'"$rel_prefix"'}g' "$dir/index.html"
 
   rm -f "$body_file"
 }
