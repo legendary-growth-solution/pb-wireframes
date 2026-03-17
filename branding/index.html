@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Branding and Design Language | Paramount Bay Homebuyers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    .brand-hero {
+      background: linear-gradient(118deg, #f7fbff 0%, #ffffff 52%, #f7e6b0 100%);
+      border-color: #cddff0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .brand-hero::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -65px;
+      top: -70px;
+      border-radius: 999px;
+      background: radial-gradient(circle at center, rgba(255, 159, 28, 0.32), rgba(255, 159, 28, 0));
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .hero-quote {
+      border: 1px solid #c9dff3;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.84);
+      padding: 1rem;
+    }
+
+    .hero-quote p {
+      margin: 0;
+      font-size: 1.08rem;
+      color: #1a4d78;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .hero-quote small {
+      display: block;
+      margin-top: 0.55rem;
+      color: #52708f;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .token-group + .token-group {
+      margin-top: 2.2rem;
+    }
+
+    .palette-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 1rem;
+    }
+
+    .swatch {
+      border: 1px solid #cfddeb;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: #fff;
+    }
+
+    .swatch-chip {
+      min-height: 104px;
+      padding: 0.8rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      color: #fff;
+      font-family: "Poppins", Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .swatch-chip.light {
+      color: #163757;
+    }
+
+    .swatch-meta {
+      padding: 0.85rem;
+    }
+
+    .swatch-meta p {
+      margin: 0.22rem 0 0;
+      color: #5d738a;
+      font-size: 0.9rem;
+    }
+
+    .swatch-label {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 1rem;
+    }
+
+    .swatch-hex {
+      margin-top: 0.25rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #486380;
+      font-size: 0.88rem;
+    }
+
+    .tone-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .tone-chip {
+      border: 1px solid #c8daeb;
+      background: #f4faff;
+      color: #22507b;
+      border-radius: 999px;
+      padding: 0.34rem 0.7rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .type-card {
+      border: 1px solid #cfdeeb;
+      border-radius: 12px;
+      background: #fff;
+      padding: 1rem;
+    }
+
+    .type-tag {
+      margin: 0 0 0.8rem;
+      color: #1d5b93;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+    }
+
+    .type-sample h1,
+    .type-sample h2,
+    .type-sample h3,
+    .type-sample p {
+      margin: 0 0 0.45rem;
+    }
+
+    .type-sample h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .type-sample h2 {
+      font-size: 32px;
+      line-height: 1.2;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .type-sample h3 {
+      font-size: 24px;
+      line-height: 1.25;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .type-sample p {
+      font-size: 18px;
+      line-height: 1.62;
+    }
+
+    .type-small {
+      font-size: 15px;
+      color: #5b748f;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .layout-item {
+      border-radius: 12px;
+      border: 1px solid #cadcec;
+      min-height: 122px;
+      padding: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .layout-item span {
+      font-size: 0.82rem;
+      color: #4e6883;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .layout-item strong {
+      margin-top: 0.35rem;
+      display: block;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .layout-item.white {
+      background: #ffffff;
+    }
+
+    .layout-item.blue {
+      background: #f4faff;
+    }
+
+    .layout-item.sand {
+      background: #f7e6b0;
+    }
+
+    .check-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .check-card {
+      border-radius: 12px;
+      padding: 1rem;
+      border: 1px solid #ccdded;
+      background: #fff;
+    }
+
+    .check-card h3 {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 1rem;
+    }
+
+    .check-card ul {
+      margin: 0.6rem 0 0;
+      padding-left: 1.1rem;
+      color: #4f657e;
+      line-height: 1.55;
+    }
+
+    .check-card.bad {
+      background: #fef5f4;
+      border-color: #f1c9c5;
+    }
+
+    .check-card.good {
+      background: #f4fbf5;
+      border-color: #cbe7d0;
+    }
+
+    .nav-preview {
+      margin-top: 1rem;
+      border: 1px solid #cddff0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: #fff;
+    }
+
+    .nav-strip {
+      background: #f7fbff;
+      padding: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      border-bottom: 1px solid #d7e6f4;
+    }
+
+    .nav-mini {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-mini span {
+      padding: 0.36rem 0.62rem;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid #d8e4f0;
+      color: #264969;
+      font-family: "Poppins", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+
+    .hero-preview {
+      background: linear-gradient(116deg, #77bce6 0%, #ffffff 72%);
+      padding: 1rem;
+    }
+
+    .hero-preview h3 {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 1.16rem;
+      color: #103f66;
+    }
+
+    .hero-preview p {
+      margin: 0.48rem 0 0;
+      color: #355d82;
+      max-width: 540px;
+    }
+
+    .btn-demo {
+      margin-top: 0.9rem;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .icon-style-grid {
+      display: grid;
+      margin-top: 1rem;
+      gap: 0.8rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .icon-style-card {
+      border: 1px solid #cfdceb;
+      border-radius: 12px;
+      background: #fff;
+      padding: 0.85rem;
+    }
+
+    .icon-style-card h3 {
+      margin: 0;
+      font-size: 0.98rem;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .icon-dot-row {
+      margin-top: 0.55rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .icon-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 2px solid currentColor;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-family: "Poppins", Arial, sans-serif;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .image-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .image-note {
+      margin-top: 0.7rem;
+      color: #54708c;
+    }
+
+    .breakpoint-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .breakpoint {
+      border-radius: 12px;
+      border: 1px solid #cddfed;
+      padding: 0.9rem;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .breakpoint h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .breakpoint p {
+      margin: 0.42rem 0 0;
+      color: #4d637b;
+    }
+
+    .breakpoint .size {
+      display: inline-block;
+      margin-top: 0.62rem;
+      background: #edf6ff;
+      color: #205683;
+      border-radius: 999px;
+      padding: 0.2rem 0.56rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .motion-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .motion-card {
+      border-radius: 12px;
+      padding: 1rem;
+      border: 1px solid #cbdeec;
+      background: #fff;
+    }
+
+    .motion-card h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .motion-card ul {
+      margin: 0.58rem 0 0;
+      padding-left: 1.1rem;
+      color: #4f657e;
+      line-height: 1.55;
+    }
+
+    .motion-card.no {
+      background: #fef3f1;
+      border-color: #efc8c3;
+    }
+
+    @media (max-width: 990px) {
+      .hero-grid,
+      .palette-grid,
+      .type-grid,
+      .layout-grid,
+      .check-grid,
+      .icon-style-grid,
+      .breakpoint-grid,
+      .motion-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="site-brand" href="../" aria-label="Paramount Bay Homebuyers Home">
+        <img src="../assets/images/Logo.png" alt="Paramount Bay Homebuyers logo" />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="../how-it-works/">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="../sell-your-house/">Sell Your House</a></li>
+          <li class="nav-item"><a class="nav-link" href="../locations/">Areas We Serve</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../contact/">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary" href="../contact/">Get Cash Offer</a>
+      </nav>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <div class="container">
+        <ul class="mobile-nav">
+          <li><a href="../how-it-works/">How It Works</a></li>
+          <li><a href="../sell-your-house/">Sell Your House</a></li>
+          <li><a href="../locations/">Areas We Serve</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+          <li><a href="tel:+18135551234">Call (813) 555-1234</a></li>
+          <li><a class="btn btn-primary btn-block" href="../contact/">Get Cash Offer</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <div class="container">
+      <nav class="breadcrumb">Home &gt; Branding &amp; Design Language</nav>
+
+      <section class="page-hero brand-hero">
+        <p class="eyebrow">Brand Foundation</p>
+        <h1>Paramount Bay Homebuyers Branding and Design Language</h1>
+        <p class="page-lead">A practical, page-by-page design reference that captures our Florida Gulf Coast tone: light, friendly, sunny, trustworthy, and easy to navigate.</p>
+        <div class="hero-grid">
+          <div>
+            <p class="section-intro">Use this system whenever we build headers, landing pages, forms, or section templates so every page feels like one clear, local brand.</p>
+            <div class="tone-chips">
+              <span class="tone-chip">Light</span>
+              <span class="tone-chip">Friendly</span>
+              <span class="tone-chip">Sunny</span>
+              <span class="tone-chip">Approachable</span>
+              <span class="tone-chip">Trustworthy</span>
+              <span class="tone-chip">Simple Navigation</span>
+            </div>
+          </div>
+          <aside class="hero-quote">
+            <p>"Friendly local cash buyer who makes selling simple."</p>
+            <small>Target emotional impression</small>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Brand Visual Direction</h2>
+        <p class="section-intro">The visual story should feel like Tampa Bay: warm sunlight, palm trees, coastal homes, and relaxed neighborhoods. Avoid dark, corporate, or aggressive styling.</p>
+        <div class="check-grid">
+          <article class="check-card good">
+            <h3>Do</h3>
+            <ul>
+              <li>Keep layouts airy with generous breathing space.</li>
+              <li>Use rounded elements and subtle shadows.</li>
+              <li>Prioritize easy scanning and friendly copy blocks.</li>
+              <li>Lead with bright neighborhood photography.</li>
+            </ul>
+          </article>
+          <article class="check-card bad">
+            <h3>Avoid</h3>
+            <ul>
+              <li>Dense sections, cluttered modules, and heavy borders.</li>
+              <li>Dark mood photography and gloomy homes.</li>
+              <li>Aggressive color combinations and harsh contrasts.</li>
+              <li>Heavy gradients and over-animated blocks.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt-blue">
+        <h2>Core Color Palette</h2>
+        <p class="section-intro">Use primary blues for structure, Florida accents for highlights, and neutrals to keep the interface clean and calm.</p>
+
+        <div class="token-group">
+          <h3>Primary Brand Colors</h3>
+          <div class="palette-grid">
+            <article class="swatch">
+              <div class="swatch-chip" style="background:#1E78C8;">Blue <span>Primary</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Primary Blue</p>
+                <p class="swatch-hex">#1E78C8</p>
+                <p>Main brand color for key UI and section anchors.</p>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-chip" style="background:#0B5FA5;">Blue <span>Deep</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Deep Blue</p>
+                <p class="swatch-hex">#0B5FA5</p>
+                <p>Navigation bars, footer backgrounds, and solid blocks.</p>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-chip light" style="background:#77BCE6;">Sky <span>Wash</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Sky Blue</p>
+                <p class="swatch-hex">#77BCE6</p>
+                <p>Hero gradients and light atmospheric backgrounds.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="token-group">
+          <h3>Florida Accent Colors</h3>
+          <div class="palette-grid">
+            <article class="swatch">
+              <div class="swatch-chip" style="background:#FF9F1C;">CTA <span>Primary</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Sunset Orange</p>
+                <p class="swatch-hex">#FF9F1C</p>
+                <p>Primary CTA button fill and high-intent actions.</p>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-chip light" style="background:#F2B705;">Accent <span>Warm</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Golden Banner</p>
+                <p class="swatch-hex">#F2B705</p>
+                <p>Secondary accents and hover states on orange CTAs.</p>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-chip" style="background:#3BB44A;">Icon <span>Green</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Palm Green</p>
+                <p class="swatch-hex">#3BB44A</p>
+                <p>Icons, positive highlights, and confirmation accents.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="token-group">
+          <h3>Neutral Colors</h3>
+          <div class="palette-grid">
+            <article class="swatch">
+              <div class="swatch-chip light" style="background:#FFFFFF; border-top:1px solid #d8e4ef;">Base <span>White</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">White</p>
+                <p class="swatch-hex">#FFFFFF</p>
+                <p>Main content background for clarity and clean reading.</p>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-chip light" style="background:#F7E6B0;">Sand <span>Soft</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Soft Sand</p>
+                <p class="swatch-hex">#F7E6B0</p>
+                <p>Alternating section background to add warmth.</p>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-chip" style="background:#1B2A41;">Text <span>Outline</span></div>
+              <div class="swatch-meta">
+                <p class="swatch-label">Dark Outline</p>
+                <p class="swatch-hex">#1B2A41</p>
+                <p>Body text, icon outlines, and dark separators.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Typography System</h2>
+        <p class="section-intro">Headings should be bold and rounded in Poppins or Montserrat. Body copy should stay airy and highly readable in Open Sans, Inter, or Nunito with line-height between 1.5 and 1.7.</p>
+        <div class="type-grid">
+          <article class="type-card">
+            <p class="type-tag">Heading Font</p>
+            <div class="type-sample">
+              <h1>H1: 42-48px</h1>
+              <h2>H2: 32px</h2>
+              <h3>H3: 24px</h3>
+            </div>
+            <p class="type-small">Use bold, friendly headline rhythm with short lines for easy scanning.</p>
+          </article>
+          <article class="type-card">
+            <p class="type-tag">Body Font</p>
+            <div class="type-sample">
+              <p>Body text at 18px should feel open, clear, and conversational for homeowners in high-stress selling situations.</p>
+              <p class="type-small">Small text: 15px for secondary details and helper copy.</p>
+            </div>
+            <p class="type-small">Never use condensed fonts or dense paragraph blocks.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt-sand">
+        <h2>Layout and Section Rhythm</h2>
+        <p class="section-intro">Every page should feel spacious with minimal borders, rounded cards, and soft shadows. Alternate section backgrounds to keep long pages bright and easy to follow.</p>
+        <div class="layout-grid">
+          <article class="layout-item white">
+            <span>Section 1</span>
+            <strong>White #FFFFFF</strong>
+          </article>
+          <article class="layout-item blue">
+            <span>Section 2</span>
+            <strong>Soft Blue #F4FAFF</strong>
+          </article>
+          <article class="layout-item sand">
+            <span>Section 3</span>
+            <strong>Soft Sand #F7E6B0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Header and Hero Blueprint</h2>
+        <p class="section-intro">Keep navigation sticky with a white or very light blue background (#F7FBFF). Use a left-aligned logo, the primary nav links, and a right-side "Get Cash Offer" CTA in Sunset Orange.</p>
+        <div class="nav-preview">
+          <div class="nav-strip">
+            <div class="nav-mini">
+              <span>How It Works</span>
+              <span>Sell Your House</span>
+              <span>Areas We Serve</span>
+              <span>About</span>
+              <span>Contact</span>
+            </div>
+            <a class="btn btn-primary" href="#" onclick="return false;">Get Cash Offer</a>
+          </div>
+          <div class="hero-preview">
+            <h3>Sell Your House Fast in Tampa Bay</h3>
+            <p>Hero needs one clear headline, short support copy, and an immediate action. Use a subtle coastal gradient like #77BCE6 to #FFFFFF.</p>
+            <div class="btn-demo">
+              <a class="btn btn-primary" href="#" onclick="return false;">Primary CTA</a>
+              <a class="btn btn-secondary" href="#" onclick="return false;">Secondary CTA</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-blue">
+        <h2>Button and Component Rules</h2>
+        <p class="section-intro">Primary buttons should use #FF9F1C with hover #F2B705, white text, 10px radius, and 14px by 26px padding. Secondary buttons use #1E78C8 with hover #0B5FA5.</p>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Button Examples</h3>
+            <p>Rounded, high-contrast, and easy to tap.</p>
+            <div class="btn-demo">
+              <a class="btn btn-primary" href="#" onclick="return false;">Get Cash Offer</a>
+              <a class="btn" style="background:#1E78C8;color:#fff;" href="#" onclick="return false;">Learn More</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Form and Card Specs</h3>
+            <p>Cards: white background, 12px radius, soft shadow <code>0 4px 12px rgba(0,0,0,0.08)</code>.</p>
+            <div class="field">Rounded form field with soft border</div>
+            <div class="field">Focus color target: #1E78C8</div>
+            <p style="margin-top:0.65rem;"><a class="btn btn-primary btn-block" href="#" onclick="return false;">Submit Button #FF9F1C</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Icon, Illustration, and Image Style</h2>
+        <p class="section-intro">Icons should be simple line icons with rounded corners and a playful tone. Illustrations should be cartoon-style with bold outlines in the core palette.</p>
+
+        <div class="icon-style-grid">
+          <article class="icon-style-card" style="color:#1E78C8;">
+            <h3>Primary Icon</h3>
+            <div class="icon-dot-row">
+              <span class="icon-dot">A</span>
+              <span class="icon-dot">B</span>
+            </div>
+          </article>
+          <article class="icon-style-card" style="color:#3BB44A;">
+            <h3>Accent Highlight</h3>
+            <div class="icon-dot-row">
+              <span class="icon-dot">C</span>
+              <span class="icon-dot">D</span>
+            </div>
+          </article>
+          <article class="icon-style-card" style="color:#FF9F1C;">
+            <h3>Warm Highlight</h3>
+            <div class="icon-dot-row">
+              <span class="icon-dot">E</span>
+              <span class="icon-dot">F</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="image-grid">
+          <div class="image-placeholder lg">Tampa or St. Petersburg neighborhood photo with bright daylight</div>
+          <div class="image-placeholder lg">Illustration set: house, palm trees, friendly mascot, suburban block</div>
+        </div>
+        <p class="image-note">Photography should stay positive and hopeful: Florida houses, sunlight, palm trees, and friendly homeowners. Avoid abandoned or gloomy property imagery.</p>
+      </section>
+
+      <section class="section alt-sand">
+        <h2>Footer and Mobile Rules</h2>
+        <p class="section-intro">Footer uses Deep Blue (#0B5FA5) with white text. Include company links, sell page, areas we serve, contact details, phone, email, service area, and social icons.</p>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Footer Content Blocks</h3>
+            <ul>
+              <li>Company</li>
+              <li>Sell Your House</li>
+              <li>Areas We Serve</li>
+              <li>Contact + social links</li>
+            </ul>
+            <p style="margin-top:0.7rem;">Always include phone, email, and service area summary.</p>
+          </article>
+          <article class="card">
+            <h3>Mobile Priority</h3>
+            <p>Mobile-first behavior should include sticky call actions, large tap targets, simplified nav, and vertical section flow.</p>
+            <div class="breakpoint-grid">
+              <div class="breakpoint">
+                <h3>Desktop</h3>
+                <p>Wide layouts and multi-column section modules.</p>
+                <span class="size">1200px+</span>
+              </div>
+              <div class="breakpoint">
+                <h3>Tablet</h3>
+                <p>Condensed spacing and mostly single-column blocks.</p>
+                <span class="size">768px</span>
+              </div>
+              <div class="breakpoint">
+                <h3>Mobile</h3>
+                <p>Sticky call CTA and simplified navigation first.</p>
+                <span class="size">480px</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Animation Guidelines</h2>
+        <p class="section-intro">Motion should be minimal and supportive only. Keep interactions calm and intentional.</p>
+        <div class="motion-grid">
+          <article class="motion-card">
+            <h3>Allowed</h3>
+            <ul>
+              <li>Button hover glow</li>
+              <li>Subtle icon bounce</li>
+              <li>Light fade-in section reveals</li>
+            </ul>
+          </article>
+          <article class="motion-card no">
+            <h3>Avoid</h3>
+            <ul>
+              <li>Heavy motion and long animated sequences</li>
+              <li>Sliding panels across most page sections</li>
+              <li>Distracting transitions that slow scanning</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta-band">
+        <h2>Implementation Checklist</h2>
+        <p>Before launch, confirm typography sizes, CTA color rules, sticky mobile call action, and section rhythm (white, soft blue, soft sand) are all applied.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <section class="footer-col">
+          <img class="footer-brand-logo" src="../assets/images/Logo.png" alt="Paramount Bay Homebuyers logo" />
+          <p>Friendly local cash buyer helping Tampa Bay homeowners sell quickly, simply, and with certainty.</p>
+          <a href="../contact/">Get Offer</a>
+          <a href="tel:+18135551234">(813) 555-1234</a>
+          <a href="mailto:hello@paramountbayhomebuyers.com">hello@paramountbayhomebuyers.com</a>
+        </section>
+
+        <section class="footer-col">
+          <h4>Sell Your House</h4>
+          <a href="../sell-your-house/">Sell Your House</a>
+          <a href="../how-it-works/">How It Works</a>
+          <a href="../situations/">Situation Pages</a>
+          <a href="../contact/">Get Cash Offer</a>
+        </section>
+
+        <section class="footer-col">
+          <h4>Areas We Serve</h4>
+          <a href="../locations/">All Locations</a>
+          <a href="../locations/tampa/">Tampa</a>
+          <a href="../locations/st-petersburg/">St. Petersburg</a>
+          <a href="../locations/clearwater/">Clearwater</a>
+          <p style="margin-top:0.7rem;"><strong>Service Area:</strong> Hillsborough, Pinellas, Pasco, Hernando</p>
+        </section>
+
+        <section class="footer-col">
+          <h4>Contact</h4>
+          <p>Phone: (813) 555-1234</p>
+          <p style="margin-top:0.45rem;">Email: hello@paramountbayhomebuyers.com</p>
+          <p style="margin-top:0.45rem;">Social: Facebook | Instagram | YouTube</p>
+          <div class="image-placeholder footer-map" style="margin-top:0.75rem;">Service area map<br />Counties + city pins</div>
+        </section>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>Copyright 2026 Paramount Bay Homebuyers</span>
+        <span><a href="#">Privacy Policy</a> - <a href="#">Terms of Use</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky" aria-label="Sticky Mobile Actions">
+    <a class="call" href="tel:+18135551234">Tap to Call</a>
+    <a class="offer" href="../contact/">Get Offer</a>
+  </div>
+
+  <script src="../assets/site.js"></script>
+</body>
+</html>

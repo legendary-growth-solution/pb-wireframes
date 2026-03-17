@@ -14,15 +14,10 @@
     <div class="container site-header-inner">
       <a class="site-brand" href="./" aria-label="Paramount Bay Homebuyers Home">
         <img src="./assets/images/Logo.png" alt="Paramount Bay Homebuyers logo" />
-        <span class="brand-text">
-          <span class="brand-name">Paramount Bay Homebuyers</span>
-          <span class="brand-sub">Local Cash Home Buyers • Tampa Bay</span>
-        </span>
       </a>
 
       <nav class="desktop-nav" aria-label="Primary">
         <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="./how-it-works/">How It Works</a></li>
           <li class="nav-item"><a class="nav-link" href="./sell-your-house/">Sell Your House</a></li>
           <li class="nav-item"><a class="nav-link" href="./locations/">Areas We Serve</a></li>
@@ -38,7 +33,6 @@
     <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
       <div class="container">
         <ul class="mobile-nav">
-          <li><a href="./">Home</a></li>
           <li><a href="./how-it-works/">How It Works</a></li>
           <li><a href="./sell-your-house/">Sell Your House</a></li>
           <li><a href="./locations/">Areas We Serve</a></li>
@@ -54,41 +48,34 @@
   <main class="page-wrap">
     <div class="container">
       
-      <section class="page-hero">
-        <p class="eyebrow">Serving Tampa Bay Homeowners</p>
-        <h1>Sell Your House Fast in Tampa Bay</h1>
-        <p class="page-lead">Get a fair cash offer in 24 hours, sell your home as-is, and close on your schedule with a trusted local team.</p>
-      </section>
-
-      <section class="section">
-        <div class="split-2">
-          <article class="card">
-            <p class="eyebrow">Serving Tampa Bay, FL</p>
-            <h2>No Repairs. No Agents. No Waiting.</h2>
-            <p>Homeowners can request a fair cash offer in minutes and choose a closing date that fits their timeline.</p>
-            <div class="meta-chip-row">
-              <span class="meta-chip">Offer in 24 Hours</span>
-              <span class="meta-chip">Close in 7-21 Days</span>
-              <span class="meta-chip">Zero Fees</span>
-            </div>
-            <p style="margin-top:1rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
-              <a class="btn btn-primary" href="./contact/">Get My Cash Offer</a>
-              <a class="btn btn-secondary" href="./how-it-works/">See How It Works</a>
-            </p>
-            <p style="margin-top:0.9rem; color:#61778f;"><strong>Social Proof:</strong> 4.9/5 homeowner rating across Tampa Bay.</p>
-          </article>
-
-          <article class="form-shell">
-            <h3>Get Your Free Cash Offer</h3>
-            <p>No obligation. We will review your details and respond quickly.</p>
-            <div class="field">Full Name *</div>
-            <div class="field">Property Address *</div>
-            <div class="field">Phone Number *</div>
-            <div class="field">Email Address (Optional)</div>
-            <p style="margin-top:0.75rem;"><a class="btn btn-primary btn-block" href="./contact/">Get My Free Offer Now</a></p>
-            <p style="margin-top:0.6rem; font-size:0.85rem; color:#667f98;">Privacy reassurance row with lock icon will live here.</p>
-          </article>
+      <section class="page-hero home-hero">
+        <div class="home-hero-copy">
+          <p class="eyebrow">Serving Tampa Bay Homeowners</p>
+          <h1>Sell Your House Fast in Tampa Bay</h1>
+          <p class="page-lead">Get a fair cash offer in 24 hours, sell your home as-is, and close on your schedule with a trusted local team.</p>
+          <ul class="home-hero-points">
+            <li>Get your no-obligation cash offer in 24 hours.</li>
+            <li>Sell as-is with no repairs, no cleaning, and no showings.</li>
+            <li>Pick your closing date and move on your timeline.</li>
+          </ul>
+          <div class="home-hero-proof">
+            <strong>4.9/5 Tampa Bay homeowner rating</strong> across recent local purchases.
+          </div>
+          <div class="home-hero-actions">
+            <a class="btn btn-secondary" href="./how-it-works/">See How It Works</a>
+            <a class="btn btn-secondary" href="./about/reviews/">Read Local Reviews</a>
+          </div>
         </div>
+        <article class="form-shell home-hero-form">
+          <h3>Get Your Free Cash Offer</h3>
+          <p>No obligation. We will review your details and contact you quickly.</p>
+          <div class="field">Full Name *</div>
+          <div class="field">Property Address *</div>
+          <div class="field">Phone Number *</div>
+          <div class="field">Email Address (Optional)</div>
+          <p style="margin-top:0.75rem;"><a class="btn btn-primary btn-block" href="./contact/">Get My Free Offer Now</a></p>
+          <p class="hero-form-note">Private and secure. A local specialist will follow up with your options.</p>
+        </article>
       </section>
 
       <section class="section cta-band">
@@ -174,6 +161,120 @@
         <div class="image-placeholder lg">Interactive service area map for Tampa Bay</div>
       </section>
 
+      <section class="section alt-blue suggested-flow">
+        <p class="eyebrow">Suggested Form Flow</p>
+        <h2>ZIP-First Form Experience (UI Suggestion)</h2>
+        <p class="section-intro">This suggested flow starts with ZIP validation before asking for full contact and property details.</p>
+        <div class="split-2 suggested-flow-layout">
+          <article class="card">
+            <h3>Flow Steps</h3>
+            <ol class="suggested-flow-list">
+              <li>User enters ZIP code.</li>
+              <li>We validate if ZIP is in Florida.</li>
+              <li>Show a brief loading state.</li>
+              <li>Show: "We might have some cash buyers in [ZIP code]."</li>
+              <li>Reveal full name, property address, phone, and optional email.</li>
+            </ol>
+          </article>
+
+          <article class="form-shell zip-flow" data-zip-flow>
+            <h3>Check Cash Buyer Availability</h3>
+            <p>Start with your ZIP code. We will check coverage first, then collect your details.</p>
+
+            <label class="flow-label" for="suggested-zip">Property ZIP Code *</label>
+            <div class="zip-flow-row">
+              <input
+                class="field-input"
+                type="text"
+                id="suggested-zip"
+                name="zip_code"
+                inputmode="numeric"
+                maxlength="5"
+                placeholder="e.g. 33602"
+                data-zip-input
+              />
+              <button type="button" class="btn btn-primary zip-check-btn" data-zip-check>Check ZIP</button>
+            </div>
+
+            <p class="zip-flow-status" data-zip-status hidden>Checking local cash buyers near your ZIP...</p>
+            <p class="zip-flow-error" data-zip-error hidden></p>
+
+            <div class="zip-flow-details" data-zip-details hidden>
+              <p class="zip-flow-success">We might have some cash buyers in <strong data-zip-echo>your area</strong>.</p>
+
+              <div class="field-input-wrap">
+                <label class="flow-label" for="suggested-full-name">Full Name *</label>
+                <input class="field-input" type="text" id="suggested-full-name" name="full_name" placeholder="Enter your full name" />
+              </div>
+
+              <div class="field-input-wrap">
+                <label class="flow-label" for="suggested-address">Property Address *</label>
+                <input class="field-input" type="text" id="suggested-address" name="property_address" placeholder="Street, City" />
+              </div>
+
+              <div class="field-input-wrap">
+                <label class="flow-label" for="suggested-phone">Phone Number *</label>
+                <input class="field-input" type="tel" id="suggested-phone" name="phone_number" placeholder="(813) 555-1234" />
+              </div>
+
+              <div class="field-input-wrap">
+                <label class="flow-label" for="suggested-email">Email Address (Optional)</label>
+                <input class="field-input" type="email" id="suggested-email" name="email_address" placeholder="you@example.com" />
+              </div>
+
+              <p style="margin-top:0.75rem;"><a class="btn btn-primary btn-block" href="./contact/">Get My Free Offer Now</a></p>
+              <p class="hero-form-note">Private and secure. A local specialist will follow up with your options.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section case-study-section">
+        <p class="eyebrow">Featured Case Study</p>
+        <h2>How a Tampa Family Sold As-Is in 11 Days</h2>
+        <p class="section-intro">A real-world example of the stress-free cash sale experience we aim to deliver across Tampa Bay.</p>
+        <div class="split-2 case-study-layout">
+          <article class="card case-study-story">
+            <div class="meta-chip-row">
+              <span class="meta-chip">Neighborhood: Seminole Heights</span>
+              <span class="meta-chip">Property: 3 Bed / 2 Bath</span>
+              <span class="meta-chip">Situation: Needed Repairs</span>
+            </div>
+            <h3>The Challenge</h3>
+            <p>The homeowner needed to move quickly for a job relocation and could not spend time or money on repairs before listing.</p>
+            <h3>The Solution</h3>
+            <p>Our team reviewed the property, provided a clear no-obligation cash offer within 24 hours, and handled paperwork through a local title partner.</p>
+            <h3>The Outcome</h3>
+            <p>The seller closed in 11 days, avoided agent commissions, and moved on schedule without open houses or contractor delays.</p>
+            <blockquote class="case-study-quote">"Everything was straightforward. We got a fair offer fast and closed right on time without fixing anything first."</blockquote>
+            <p class="case-study-author">- Homeowner, Tampa</p>
+          </article>
+          <aside class="card case-study-proof">
+            <h3>Results Snapshot</h3>
+            <div class="case-study-stats">
+              <div class="case-stat">
+                <span class="case-stat-value">11</span>
+                <span class="case-stat-label">Days to Close</span>
+              </div>
+              <div class="case-stat">
+                <span class="case-stat-value">24h</span>
+                <span class="case-stat-label">Offer Delivery Time</span>
+              </div>
+              <div class="case-stat">
+                <span class="case-stat-value">$0</span>
+                <span class="case-stat-label">Repair Spend</span>
+              </div>
+              <div class="case-stat">
+                <span class="case-stat-value">No</span>
+                <span class="case-stat-label">Open Houses Needed</span>
+              </div>
+            </div>
+            <div class="image-placeholder">Case study photo placeholder<br />Front exterior and smiling homeowner</div>
+            <a class="btn btn-primary" href="./contact/">Start My Cash Offer</a>
+          </aside>
+        </div>
+      </section>
+
       <section class="section alt-blue">
         <h2>What Homeowners Say</h2>
         <div class="grid grid-3">
@@ -196,7 +297,6 @@
       <div class="container footer-grid">
         <section class="footer-col">
           <img class="footer-brand-logo" src="./assets/images/Logo.png" alt="Paramount Bay Homebuyers logo" />
-          <h3>Paramount Bay Homebuyers</h3>
           <p>Friendly local cash buyer helping Tampa Bay homeowners sell quickly, simply, and with certainty.</p>
           <a href="./contact/">Get Offer</a>
           <a href="tel:+18135551234">(813) 555-1234</a>
